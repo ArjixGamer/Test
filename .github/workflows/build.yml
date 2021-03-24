@@ -23,6 +23,12 @@ jobs:
         run: pip3 install discord.py
 
       - name: Run Bot
-        run: python bot.py $TOKEN
+        run: echo 1
         env:
           TOKEN: ${{ secrets.BOT_TOKEN }}
+
+      - name: Restart Bot
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.TEST_TOKEN }}
+          event-type: workflow-dispatch

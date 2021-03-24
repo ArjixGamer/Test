@@ -2,9 +2,23 @@
 
 import discord
 import sys
+import time
 
 token = sys.argv[1]
 client = discord.Client()
+
+@client.event
+async def on_ready():
+    originalStart = time.time()
+    start = originalStart
+
+    while True:
+        exit(0)
+        time.sleep(1)
+        start += 1
+        
+        if start - originalStart >= 18000:
+            exit(0)
 
 @client.event
 async def on_message(message):
