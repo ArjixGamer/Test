@@ -21,6 +21,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    print(message)
     if message.content == 'Are you alive?':
         await message.channel.send('Yes, I am.')
 
