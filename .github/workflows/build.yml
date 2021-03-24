@@ -31,4 +31,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.TEST_TOKEN }}
-          event-type: push
+          event-type: restart
+          client-payload: '{"runid": "${{ github.run_id }}"}'
