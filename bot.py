@@ -13,12 +13,11 @@ async def on_ready():
     start = originalStart
 
     while True:
-        exit(0)
         time.sleep(1)
         start += 1
         
         if start - originalStart >= 18000:
-            exit(0)
+            sys.exit(0)
 
 @client.event
 async def on_message(message):
