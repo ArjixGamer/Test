@@ -162,5 +162,5 @@ try:
 
 
     run(client)
-except:
+except RuntimeError:
     raise KeyboardInterrupt
