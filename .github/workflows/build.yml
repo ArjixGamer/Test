@@ -23,7 +23,7 @@ jobs:
         run: pip3 install -r requirements.txt
 
       - name: Run Bot
-        run: python bot.py
+        run: python discordbot.py
         env:
           TOKEN: ${{ secrets.BOT_TOKEN }}
 
