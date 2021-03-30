@@ -1,11 +1,9 @@
 name: Run Bot
 
 on:
+  push:
   repository_dispatch:
     types: [restart]
-  push:
-    branches:
-      - '*'
 
 jobs:
   run_bot:
