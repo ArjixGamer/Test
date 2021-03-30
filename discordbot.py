@@ -135,6 +135,17 @@ async def warn(ctx, user: discord.User, *, message):
 async def ping(ctx):
     await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
+    
+# Ping utility
+@client.command()
+async def exit(ctx):
+    if str(ctx.author.id) == "674710789138939916":
+        await client.logout()
+        await client.close()
+        sys.exit()
+        raise KeyboardInterrupt
+    
+
 # Creates an embed and returns it.
 
 
