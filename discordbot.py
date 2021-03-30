@@ -83,7 +83,7 @@ async def on_ready():
         if start - originalStart >= 18000:
             await client.logout()
             await client.close()
-            sys.exit(1)
+            sys.exit()
             raise KeyboardInterrupt
 
 
