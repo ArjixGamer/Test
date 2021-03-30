@@ -5,7 +5,7 @@ import sys
 import time
 import asyncio
 
-token = sys.argv[1]
+token = os.environ.get("TOKEN")
 client = discord.Client()
 
 @client.event
@@ -18,8 +18,10 @@ async def on_ready():
         start += 1
         
         if start - originalStart >= 18000:
-            # It's literally this bad, client.close and client.logout might as well not exist, since they do jack
-            raise KeyboardInterrupt
+            await client.logout()
+            await client.close()
+            sys.exit(1)
+            # raise KeyboardInterrupt
 
 @client.event
 async def on_message(message):
