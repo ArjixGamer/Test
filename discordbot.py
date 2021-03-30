@@ -83,7 +83,7 @@ async def on_ready():
         if start - originalStart >= 18000:
             await client.logout()
             await client.close()
-            sys.exit(0)
+            exit()
             raise KeyboardInterrupt
 
 
@@ -142,7 +142,7 @@ async def exit(ctx):
     if str(ctx.author.id) == "674710789138939916":
         await client.logout()
         await client.close()
-        sys.exit(0)
+        exit()
         raise KeyboardInterrupt
     
 
