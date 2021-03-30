@@ -19,13 +19,28 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v2
 
-      - name: Install Discord.py
-        run: pip3 install discord.py
+      - name: Install Dependencies
+        run: pip3 install -r requirements.txt
 
       - name: Run Bot
         run: python bot.py
         env:
           TOKEN: ${{ secrets.BOT_TOKEN }}
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          # Optional but recommended
+          # Defaults to "Apply automatic changes"
+          commit_message: Apply automatic changes
+
+          file_pattern: *
+
+          # Optional local file path to the repository
+          # Defaults to the root of the repository
+          repository: .
+
+          # Optional: Skip internal call to `git fetch`
+          skip_fetch: true
 
       - name: Restart Bot
         uses: peter-evans/repository-dispatch@v1
