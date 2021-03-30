@@ -2,6 +2,7 @@
 
 import discord
 import sys
+import os
 import time
 import asyncio
 
