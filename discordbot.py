@@ -81,10 +81,12 @@ async def on_ready():
         start += 1
 
         if start - originalStart >= 18000:
-            await client.logout()
-            await client.close()
-            raise KeyboardInterrupt
-
+            try:
+                await client.logout()
+                await client.close()
+                raise KeyboardInterrupt
+            except:
+                raise KeyboardInterrupt
 
 # on_message()
 
@@ -139,9 +141,12 @@ async def ping(ctx):
 @client.command()
 async def exit(ctx):
     if str(ctx.author.id) == "674710789138939916":
-        await client.logout()
-        await client.close()
-        raise KeyboardInterrupt
+        try:
+            await client.logout()
+            await client.close()
+            raise KeyboardInterrupt
+        except:
+            raise KeyboardInterrupt
     
 
 # Creates an embed and returns it.
