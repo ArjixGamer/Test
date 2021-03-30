@@ -25,7 +25,7 @@ jobs:
         run: pip3 install discord.py
 
       - name: Run Bot
-        run: python bot.py $TOKEN
+        run: python bot.py
         env:
           TOKEN: ${{ secrets.BOT_TOKEN }}
 
